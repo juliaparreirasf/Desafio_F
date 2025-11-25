@@ -21,7 +21,7 @@ jobs:
       - name: Verificar imagem criada
         run: docker images       
 
-test:
+  test:
     runs-on: ubuntu-latest
     needs: build
 
@@ -34,7 +34,7 @@ test:
           docker build -t lab-final:latest .
           docker run --rm lab-final:latest pytest -q
 
-deploy:
+  deploy:
     runs-on: ubuntu-latest
     needs: build
 
